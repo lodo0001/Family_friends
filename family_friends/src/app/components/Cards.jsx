@@ -33,20 +33,27 @@
 
 import Dog from "./Dog";
 
-export default async function Page() {
-  const res = await fetch("https://api.thedogapi.com/v1/breeds", {
+const Cards = async () => {
+  const response = await fetch("https://api.thedogapi.com/v1/breeds", {
     headers: {
-      "x-api-key": process.env.API_KEY,
+      "x-api-key": process.env.DOG_API_KEY,
     },
   });
 
-  const dogs = await res.json();
+  const breeds = await response.json();
 
   return (
     <div className="grid grid-cols-2 gap-6 p-6 m-2">
-      {dogs.slice(0, 10).map((dog) => (
-        <Dog key={dog.id} dog={dog} />
+      {breeds.map((breed) => (
+        <Dog
+          key={breed.id}
+          name={breed.name}
+          breed={breed.origin}
+          img={breed.image?.url}
+        />
       ))}
     </div>
   );
-}
+};
+
+export default Cards;

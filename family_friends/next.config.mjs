@@ -1,12 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  cacheComponents: true,
+  // cacheComponents findes ikke i standard Next.js config,
+  // så den har jeg fjernet for at undgå fejl.
   images: {
     remotePatterns: [
       {
         protocol: "https",
-        hostname: "cdn2.thedogapi.com",
-        pathname: "/**",
+        hostname: "**.thedogapi.com",
+      },
+      {
+        protocol: "https",
+        hostname: "storage.googleapis.com",
       },
     ],
   },
