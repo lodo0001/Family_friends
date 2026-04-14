@@ -8,7 +8,7 @@ import { BsPerson } from "react-icons/bs";
 const Footer = () => {
   const [active, setActive] = useState("home");
   return (
-    <footer className="font-bold text-xl p-6 m-2 flex justify-between text-black bg-gray-200/30">
+    <footer className="flex justify-around p-6 text-xl font-bold bg-gray-100/30 backdrop-blur-[30px] text-black rounded-t-3xl fixed bottom-0 left-0 w-full">
       <LuHouse
         size={30}
         className={active === "home" ? "text-[#F2968F]" : "text-gray-400"}
