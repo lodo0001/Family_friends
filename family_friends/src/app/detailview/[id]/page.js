@@ -1,6 +1,6 @@
-import Description from "../components/Description";
-import DogPicture from "../components/DogPicture";
-import FactBtn from "../components/FactBtn";
+import FactBtn from "@/components/FactBtn";
+import Description from "@/components/Description";
+import DogPicture from "@/components/DogPicture";
 
 export default function Page() {
   return (
